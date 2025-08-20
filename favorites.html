@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Favorites - MGB Catalog</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header style="display:flex; justify-content:space-between; align-items:center;">
+    <img src="images/logo.png" alt="Logo" style="height:40px;">
+    <h1>Favorites</h1>
+    <a href="index.html" style="text-decoration:none; font-size:24px;">←</a>
+  </header>
+
+  <main>
+    <section id="favorite-list">
+      <h2>Selected Items</h2>
+      <div id="favorites-grid"></div>
+      <textarea id="order-note" placeholder="Add a note (e.g. quantity)"></textarea>
+      <button id="send-whatsapp">Order via WhatsApp</button>
+    </section>
+  </main>
+
+  <script src="favorites.js"></script>
+</body>
+</html>

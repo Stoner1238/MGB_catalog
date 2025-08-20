@@ -1,0 +1,120 @@
+/* Base styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background:#f5f5f5;
+}
+header {
+  text-align: center;
+  padding: 1rem;
+}
+
+#products {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+#product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.product-card {
+  background: #ffffff;
+  border: 1px solid #007bff;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Favorites page styles */
+#favorite-list {
+background:#ffffff;
+padding:1rem;
+}
+#favorites-grid {
+display:grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap:1rem;
+}
+#favorite-list button {
+background:#007bff;
+color:#ffffff;
+border:none;
+padding:0.5rem 1rem;
+border-radius:6px;
+cursor:pointer;
+transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+#favorite-list button:hover {
+transform:translateY(-3px);
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+/* Catalog page light glassy styles */
+body {
+background: #f8f9fa;
+color: #000000;
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+}
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1rem 2rem;
+background: rgba(255,255,255,0.8);
+backdrop-filter: blur(10px);
+border-bottom: 1px solid #007bff;
+border-radius: 0 0 15px 15px;
+}
+header img {
+height: 50px;
+border-radius: 8px;
+}
+header h1 {
+margin: 0;
+font-size: 2rem;
+}
+#product-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 1.5rem;
+padding: 2rem;
+max-width: 1200px;
+margin: auto;
+}
+.product-card {
+background: rgba(255,255,255,0.8);
+border: 1px solid #007bff;
+border-radius: 15px;
+padding: 1.2rem;
+backdrop-filter: blur(10px);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+text-align: center;
+color: #000000;
+}
+.product-card:hover {
+transform: translateY(-6px);
+box-shadow: 0 10px 25px rgba(0,123,255,0.4);
+}
+.product-card button {
+background: #007bff;
+color: #ffffff;
+border: none;
+padding: 0.6rem 1.2rem;
+border-radius: 10px;
+cursor: pointer;
+margin-top: 0.5rem;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.product-card button:hover {
+transform: translateY(-3px);
+box-shadow: 0 6px 15px rgba(0,123,255,0.3);
+}
