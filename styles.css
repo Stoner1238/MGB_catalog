@@ -118,3 +118,67 @@ transition: transform 0.2s ease, box-shadow 0.2s ease;
 transform: translateY(-3px);
 box-shadow: 0 6px 15px rgba(0,123,255,0.3);
 }
+.quantity-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+.quantity-controls button {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+.quantity-controls span.qty {
+  min-width: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+/* Footer styling */
+footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: #ffffff;
+  border-top: 1px solid #007bff;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 0 -4px 12px rgba(0,123,255,0.1);
+  margin-top: 2rem;
+  font-family: Arial, sans-serif;
+  color: #000;
+}
+
+footer p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+}
+
+footer p:first-child {
+  font-weight: bold;
+}
+/* Body background */
+body {
+  background: rgba(0, 123, 255, 0.1); /* soft transparent blue */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
+
+/* Keep header and cards with white glassy effect */
+header, .product-card, footer {
+  background: rgba(255, 255, 255, 0.9); /* white with slight transparency */
+  backdrop-filter: blur(10px);
+}
+/* Body background like product catalog */
+body {
+  background: rgba(0, 123, 255, 0.05); /* very light transparent blue */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
