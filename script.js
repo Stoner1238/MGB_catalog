@@ -1,55 +1,56 @@
-// Ensure script runs after DOM is loaded
-window.onload = function () {
-  const productGrid = document.getElementById('product-grid');
+// CATALOG PAGE: build 50 products + add-to-favorites (with quantity)
+window.addEventListener("DOMContentLoaded", () => {
+  const productGrid = document.getElementById("product-grid");
 
-  // Create 50 products (no price, only name + image)
-  let products = [];
+  // Create 50 products (name + image only)
+  const products = [];
   for (let i = 1; i <= 50; i++) {
     products.push({
       id: i,
       name: `Product ${i}`,
-      image: `images/product${i}.jpg` // change to real product images later
+      image: `images/product${i}.jpg`, // change to .png if your files are png
     });
   }
 
-  // Load favorites from localStorage or initialize
-  let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-
-  // Function to display products in catalog
+  // Render catalog
   function displayProducts() {
-    productGrid.innerHTML = '';
-    products.forEach(product => {
-      const card = document.createElement('div');
-      card.className = 'product-card';
+    productGrid.innerHTML = "";
+    products.forEach((p) => {
+      const card = document.createElement("div");
+      card.className = "product-card";
       card.innerHTML = `
-        <img src="${product.image}" alt="${product.name}" style="width:100%; border-radius:12px;">
-        <h3>${product.name}</h3>
-        <button class="fav-btn" data-id="${product.id}">Add to Favorites</button>
+        <img src="${p.image}" alt="${p.name}" style="width:100%; border-radius:12px;" loading="lazy">
+        <h3>${p.name}</h3>
+        <button class="fav-btn" data-id="${p.id}">Add to Favorites</button>
       `;
       productGrid.appendChild(card);
     });
 
-    // Event listeners for all add-to-favorites buttons
-    document.querySelectorAll('.fav-btn').forEach(btn => {
-      btn.addEventListener('click', function () {
-        const id = parseInt(this.getAttribute('data-id'));
+    // Wire up add-to-favorites buttons
+    productGrid.querySelectorAll(".fav-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const id = parseInt(btn.getAttribute("data-id"));
         addToFavorites(id);
       });
     });
   }
 
-  // Add product to favorites
+  // Add (or increase) in favorites (stored in localStorage)
   function addToFavorites(id) {
-    const item = products.find(p => p.id === id);
-    if (!favorites.find(f => f.id === id)) {
-      favorites.push(item);
-      localStorage.setItem('favorites', JSON.stringify(favorites));
-      alert(`${item.name} added to favorites!`);
+    const item = products.find((p) => p.id === id);
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const existing = favorites.find((f) => f.id === id);
+
+    if (existing) {
+      existing.qty = (existing.qty || 1) + 1; // increase qty
+      alert(`${existing.name} quantity increased to ${existing.qty}.`);
     } else {
-      alert(`${item.name} is already in favorites.`);
+      favorites.push({ id: item.id, name: item.name, image: item.image, qty: 1 });
+      alert(`${item.name} added to favorites!`);
     }
+
+    localStorage.setItem("favorites", JSON.stringify(favorites));
   }
 
-  // Display products on page load
   displayProducts();
-};
+});
