@@ -85,7 +85,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // NOTE: WhatsApp won't make 127.0.0.1 links clickable. Host the site to get https links.
-    const phone = "2347082798562"; // your number
+    const phone = "2348026312854"; // your number
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   }
@@ -94,3 +94,4 @@ window.addEventListener("DOMContentLoaded", () => {
   renderFavorites();
   if (sendBtn) sendBtn.addEventListener("click", sendToWhatsApp);
 });
+
